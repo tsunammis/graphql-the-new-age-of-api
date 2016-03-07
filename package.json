@@ -1,14 +1,15 @@
 {
-  "name": "bbl-graphql",
+  "name": "intro-graphql",
   "version": "1.0.0",
-  "description": "",
+  "description": "Small intro to GraphQL, code used to give BBL (Brown Bag Lunch) & Meetups",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["graphql", "bbl", "meetup"],
+  "author": "Stan Chollet <stanislas.chollet@gmail.com> (http://stanislaschollet.com)",
+  "license": "MIT",
   "dependencies": {
     "colors": "^1.1.2",
     "express": "^4.13.4",

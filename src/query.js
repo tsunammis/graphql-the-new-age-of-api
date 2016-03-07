@@ -1,15 +1,13 @@
 'use strict'
 
-var request = require('superagent')
-var graphql = require('graphql')
-var GraphQLString = graphql.GraphQLString
+var request           = require('superagent')
+var graphql           = require('graphql')
+var GraphQLString     = graphql.GraphQLString
 var GraphQLObjectType = graphql.GraphQLObjectType
-var GraphQLInt = graphql.GraphQLInt
-var GraphQLList = graphql.GraphQLList
-
-var USERS = require('./data/users.json')
-var VIDEOS = require('./data/videos.json')
-var LIKES = require('./data/likes.json')
+var GraphQLInt        = graphql.GraphQLInt
+var GraphQLList       = graphql.GraphQLList
+var USERS             = require('./data/users.json')
+var VIDEOS            = require('./data/videos.json')
 
 var UserType = new GraphQLObjectType({
   name: 'User',

@@ -1,14 +1,11 @@
 'use strict'
 
-var graphql = require('graphql')
-var GraphQLString = graphql.GraphQLString
-var GraphQLObjectType = graphql.GraphQLObjectType
-var GraphQLInt = graphql.GraphQLInt
-var GraphQLList = graphql.GraphQLList
-var GraphQLInputObjectType = graphql.GraphQLInputObjectType
-
-var query = require('./query')
-var USERS = require('./data/users.json')
+var graphql                 = require('graphql')
+var GraphQLString           = graphql.GraphQLString
+var GraphQLObjectType       = graphql.GraphQLObjectType
+var GraphQLInputObjectType  = graphql.GraphQLInputObjectType
+var query                   = require('./query')
+var USERS                   = require('./data/users.json')
 
 var UserAttributesInputType = new GraphQLInputObjectType({
   name: 'UserAttributesInputType',
