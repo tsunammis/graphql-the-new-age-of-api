@@ -8,16 +8,27 @@ var GraphQLInt        = graphql.GraphQLInt
 var GraphQLList       = graphql.GraphQLList
 var USERS             = require('./data/users.json')
 var VIDEOS            = require('./data/videos.json')
+var FOLLOWING         = require('./data/following.json')
 
 var UserType = new GraphQLObjectType({
   name: 'User',
-  fields: {
-    id: { type: GraphQLString },
-    name: { type: GraphQLString },
-    fullname: {
-      type: GraphQLString,
-      deprecationReason: "Please use name instead",
-      resolve: user => user.name
+  fields: () => {
+    return {
+      id: { type: GraphQLString },
+      name: { type: GraphQLString },
+      fullname: {
+        type: GraphQLString,
+        deprecationReason: "Please use name instead",
+        resolve: user => user.name
+      },
+      videos: {
+        type: new GraphQLList(VideoType),
+        resolve: user => Object.keys(VIDEOS).map(key => VIDEOS[key]).filter(video => video.owner == user.id)
+      },
+      following: {
+        type: new GraphQLList(UserType),
+        resolve: user => FOLLOWING[user.id].map(userId => USERS[userId])
+      }
     }
   }
 })
