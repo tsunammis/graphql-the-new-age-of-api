@@ -1,0 +1,21 @@
+version: '2'
+services:
+  api:
+    build: api/
+    ports:
+      - 5002:5002
+      - 5003:5003
+
+  front:
+    build: front/
+    ports:
+      - 5001:5001
+
+  slide:
+    build: slide/
+    ports:
+      - 5000:5000
+
+networks:
+  default:
+    driver: bridge

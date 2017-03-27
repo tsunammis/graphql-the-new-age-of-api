@@ -1,0 +1,40 @@
+{
+  "name": "graphqlthenewageofapi-front",
+  "version": "1.0.0",
+  "description": "Project used as an example of React application which consumes a GraphQL API",
+  "author": "Stan Chollet",
+  "license": "MIT",
+  "scripts": {
+    "server": "nodemon index",
+    "build-client": "webpack",
+    "client": "webpack --watch",
+    "watch": "concurrently --kill-others \"npm run client\" \"npm run server\""
+  },
+  "dependencies": {
+    "babel-preset-react": "^6.23.0",
+    "express": "^4.14.0",
+    "express-graphql": "^0.6.1",
+    "graphql": "^0.8.2",
+    "lodash": "^4.17.4",
+    "lodash.get": "^4.4.2",
+    "radium": "^0.18.1",
+    "react": "^15.4.2",
+    "react-addons-update": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1",
+    "webpack": "^2.2.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-es2015-native-modules": "^6.9.4",
+    "chai": "^3.5.0",
+    "concurrently": "^3.3.0",
+    "html-webpack-plugin": "^2.28.0",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0",
+    "sinon": "^1.17.7",
+    "sinon-chai": "^2.8.0"
+  }
+}

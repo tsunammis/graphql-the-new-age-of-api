@@ -1,0 +1,47 @@
+.reveal section img.photoProfile {
+  border-radius: 50%;
+  border: 3px solid #1eb1ed;
+  width: 20%;
+}
+
+.reveal section img {
+  border: none;
+  box-shadow: none;
+  background: none;
+}
+
+.reveal section .textPrimaryColor {
+  color: #1eb1ed;
+}
+
+.reveal section .textSecondaryColor {
+  color: #d97cc2;
+}
+
+.reveal section .textFadeColor {
+  color: #aaaaaa;
+}
+
+.reveal section .smallList {
+  list-style: none;
+  text-align: center;
+  font-size: 0.6em;
+  margin-left: 0;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  text-transform: none;
+}
+
+.reveal h1 {
+    font-size: 2.0em;
+}
+
+.reveal h2 {
+    font-size: 1.0em;
+}
