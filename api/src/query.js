@@ -46,10 +46,10 @@ var VideoType = new GraphQLObjectType({
     url: { type: GraphQLString },
     likes: {
       type: GraphQLInt,
-      resolve: video => {
+      resolve: (video, args, ctx) => {
         return new Promise((resolve, reject) => {
           request
-            .get(`http://localhost:4001/${video.id}`)
+            .get(`${ctx['like-service-url']}/${video.id}`)
             .end((err, res) => err || !res.ok ? reject() : resolve(res.body.data))
         })
       }

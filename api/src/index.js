@@ -29,7 +29,10 @@ const app = express()
   .use('/graphql', graphqlHTTP({
     schema: schema,
     pretty: true,
-    graphiql: true
+    graphiql: true,
+    context: {
+      'like-service-url': `http://localhost:${ULIKE_PORT}`
+    }
   }))
   .listen(GRAPHQL_PORT, () => {
     console.log(colors.blue(`graphql listen on localhost:${GRAPHQL_PORT}`))
