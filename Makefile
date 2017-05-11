@@ -12,3 +12,12 @@ build:
 run: build
 	$(COMPOSE) up -d front slide
 	$(COMPOSE) up api
+
+
+.PHONY: stop
+stop:
+	$(COMPOSE) stop api front slide
+
+.PHONY: down
+down:
+	$(COMPOSE) down
