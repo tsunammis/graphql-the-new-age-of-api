@@ -12,6 +12,12 @@ const styles = {
   },
 }
 
+const isBrowser = typeof window !== 'undefined'
+let apiUrl = `http://localhost:5002/graphql/`
+
+if (isBrowser && window.location.hostname == 'gql-front.stan.life') {
+  apiUrl = `https://gql-api.stan.life/graphql/`
+}
 
 class Page extends React.Component {
   constructor () {
@@ -21,7 +27,7 @@ class Page extends React.Component {
 
   componentDidMount() {
     console.log('Fetch videos from GraphQL API')
-    fetch(`http://localhost:5002/graphql/`, {
+    fetch(apiUrl, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
