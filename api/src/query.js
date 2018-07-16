@@ -73,6 +73,7 @@ var SocialNetworkType = new GraphQLObjectType({
   }
 })
 
+/*
 var MeType = new GraphQLObjectType({
   name: 'Me',
   fields: () => {
@@ -102,21 +103,22 @@ var MeType = new GraphQLObjectType({
     }
   }
 })
+*/
 
 var RootQuery = new GraphQLObjectType({
   name: 'Query',
   fields: {
-    me: {
-      type: MeType,
-      resolve: () => { return {} }
-    },
-    users: {
-      type: new GraphQLList(UserType),
-      resolve: (_, args) => Object
-        .keys(USERS_DATA)
-        .map((key) => USERS_DATA[key])
-        .filter(u => u.id != CHUCK_NORRIS_USERID)
-    },
+    // me: {
+    //   type: MeType,
+    //   resolve: () => { return {} }
+    // },
+    // users: {
+    //   type: new GraphQLList(UserType),
+    //   resolve: (_, args) => Object
+    //     .keys(USERS_DATA)
+    //     .map((key) => USERS_DATA[key])
+    //     .filter(u => u.id != CHUCK_NORRIS_USERID)
+    // },
     user: {
       type: UserType,
       args: {
