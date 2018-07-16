@@ -1,0 +1,175 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/white.css">
+        <link rel="stylesheet" href="css/override.css">
+        <script src="js/head.load.min.js"></script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-background="#0d2434">
+                  <img class="photoProfile" data-src="img/stan-chollet-social-fit.jpg">
+                  <h1>Stan Chollet</h1>
+                  <h2 class="textPrimaryColor">Engineering Manager @ Dailymotion</h2>
+                  <br>
+                  <ul class="smallList">
+                    <li><a class="textFadeColor" href="https://stan.life">stan.life</a></li>
+                    <li><a class="textFadeColor" href="https://twitter.com/tsunammis">@tsunammis</a></li>
+                    <li><a class="textFadeColor" href="https://github.com/tsunammis">github.com/tsunammis</a></li>
+                  </ul>
+                </section>
+                <section data-background="#0d2434">
+                  <img data-src="img/graphql.svg">
+                  <p>
+                    <span class="textFadeColor">GraphQL != framework/lib</span><br />
+                    GraphQL = Specification
+                  </p>
+                </section>
+                <section data-background="#0d2434">
+                  <h2>La <span class="textSecondaryColor">sp&eacute;cification</span> en est o&ugrave; ?</h2>
+                  <br>
+                  <ul>
+                    <li><b class="textSecondaryColor">Production ready</b> depuis septembre 2016</li>
+                    <li>Utilis&eacute; en <b class="textSecondaryColor">prod</b> chez facebook sur les apps mobiles depuis <b class="textSecondaryColor">2012</b> <i>(Ads Manager, iOS Feed, Android Feed, iOS Messenger etc...)</i></li>
+                    <li><b class="textSecondaryColor">Open Source</b></li>
+                  </ul>
+                </section>
+                <section data-background="#0d2434">
+                  <h2>Qu'est-ce que <span class="textSecondaryColor">GraphQL</span> ?</h2>
+                </section>
+                <section data-background="#0d2434">
+                  <section>
+                    <h2 class="textSecondaryColor">hello world</h2>
+                    <iframe class="stretch" data-src="http://localhost:5000/graphiql/?api=local&query=%7B%0A%20%20me%20%7B%0A%20%20%20%20name%0A%20%20%7D%0A%7D"></iframe>
+                  </section>
+                  <section>
+                    <iframe class="stretch" data-src="http://localhost:5000/graphiql/?api=local&query=%7B%0A%20%20me%20%7B%0A%20%20%20%20name%0A%20%20%20%20socialNetwork%20%7B%0A%20%20%20%20%20%20twitter%0A%20%20%20%20%20%20facebook%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D"></iframe>
+                  </section>
+                  <section>
+                    <iframe class="stretch" data-src="http://localhost:5000/graphiql/?api=local&query=%7B%0A%20%20me%20%7B%0A%20%20%20%20name%0A%20%20%20%20videos%20%7B%0A%20%20%20%20%20%20title%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D"></iframe>
+                  </section>
+                  <section>
+                    <iframe class="stretch" data-src="http://localhost:5000/graphiql/?api=local&query=%7B%0A%20%20me%20%7B%0A%20%20%20%20name%0A%20%20%20%20videos(first%3A%201)%20%7B%0A%20%20%20%20%20%20title%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D"></iframe>
+                  </section>
+                  <section>
+                    <iframe class="stretch" data-src="http://localhost:5000/graphiql/?api=local&query=query%20getUserDetail(%24videoCount%3A%20Int!)%20%7B%0A%20%20me%20%7B%0A%20%20%20%20name%0A%20%20%20%20videos(first%3A%20%24videoCount)%20%7B%0A%20%20%20%20%20%20title%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&operationName=getUserDetail&variables=%7B%0A%20%20%22videoCount%22%3A%201%20%0A%7D"></iframe>
+                  </section>
+                </section>
+                <section data-background="#0d2434">
+                  <section>
+                    <h1>Type</h1>
+                  </section>
+                  <section>
+                    <img data-src="img/typing-1.png">
+                  </section>
+                  <section>
+                    <img data-src="img/typing-2.png">
+                  </section>
+                  <section>
+                    <img data-src="img/typing-3.png">
+                  </section>
+                  <section>
+                    <img data-src="img/typing-4.png">
+                  </section>
+                  <section>
+                    <img data-src="img/typing-5.png">
+                  </section>
+                </section>
+                <section data-background="#0d2434">
+                  <section>
+                    <h1>Introspection</h1>
+                  </section>
+                  <section>
+                    <h2>Introspection</h2>
+                    <ul>
+                      <li>Bac &agrave; sable <i>(GraphiQL)</i></li>
+                      <li>G&eacute;n&eacute;rer des clients <i>(Mod&egrave;les ...)</i></li>
+                    </ul>
+                  </section>
+                  <section>
+                    <iframe class="stretch" data-src="http://localhost:5000/graphiql/?api=local&query=%7B%0A%20%20__schema%20%7B%0A%20%20%20%20types%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20fields%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20type%20%7B%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20kind%0A%20%20%20%20%20%20%20%20%20%20ofType%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&variables=%7B%0A%20%20%22videoCount%22%3A%201%20%0A%7D"></iframe>
+                  </section>
+                  <section>
+                    <h2>Gestion des versions</h2>
+                    <iframe class="stretch" data-src="http://localhost:5000/graphiql/?api=local&query=%7B%0A%20%20users%20%7B%0A%20%20%20%20id%0A%20%20%20%20fullname%0A%20%20%7D%0A%7D&variables=%7B%0A%20%20%22videoCount%22%3A%201%0A%7D"></iframe>
+                  </section>
+                </section>
+                <section data-background="#0d2434">
+                  <h2><b class="textSecondaryColor">Pas de protocol de transport pr&eacute;conis&eacute;</b></h2>
+                </section>
+                <section data-background="#0d2434">
+                  <section>
+                    <h2>Le pouvoir appartient aux <span class="textSecondaryColor">devs front</span></h2>
+                  </section>
+                  <section>
+                    <img data-src="img/http-rest.png">
+                  </section>
+                  <section>
+                    <img data-src="img/http-graphql.png">
+                  </section>
+                </section>
+                <section data-background="#0d2434">
+                  <h2>Allons plus loin</h2>
+                </section>
+                <section data-background="#0d2434">
+                  <section>
+                    <h2>les <span class="textSecondaryColor">mutation</span>s</h2>
+                  </section>
+                  <section>
+                    <iframe class="stretch" data-src="http://localhost:5000/graphiql/?api=local&query=mutation%20%7B%0A%20%20updateNameForUser(id%3A%20%2210%22%2C%20name%3A%20%22Only%20chuck%22)%20%7B%0A%20%20%20%20id%0A%20%20%20%20name%0A%20%20%7D%0A%7D%0A&variables=%7B%0A%20%20%22videoCount%22%3A%201%0A%7D"></iframe>
+                  </section>
+                </section>
+                <section data-background="#0d2434">
+                  <section>
+                    <h2>Tol&eacute;rance aux <span class="textSecondaryColor">erreurs</span></h2>
+                  </section>
+                  <section>
+                    <iframe class="stretch" data-src="http://localhost:5000/graphiql/?api=local&query=%7B%0A%20%20videos(first%3A%207)%20%7B%0A%20%20%20%20title%0A%20%20%20%20likes%0A%20%20%7D%0A%7D&variables=%7B%0A%20%20%22videoCount%22%3A%201%0A%7D"></iframe>
+                  </section>
+                </section>
+                <section data-background="#0d2434">
+                  <section>
+                    <h2>Les <span class="textSecondaryColor">implementations</span></h2>
+                  </section>
+                  <section>
+                    <img data-src="img/implementation.png">
+                  </section>
+                </section>
+                <section data-background="#0d2434">
+                  <section>
+                    <h2>Les utilisateurs de <span class="textSecondaryColor">GraphQL</span></h2>
+                    <img data-src="img/graphql-users.png">
+                    <p class="textFadeColor">http://graphql.org/users/</p>
+                  </section>
+                </section>
+                <section data-background="#0d2434">
+                  <h1>Merci</h1>
+                  <ul class="smallList">
+                    <li><a class="textPrimaryColor" href="https://stan.life">stan.life</a></li>
+                    <li><a class="textPrimaryColor" href="https://twitter.com/tsunammis">@tsunammis</a><br><br></li>
+                    <li><a class="textFadeColor" href="https://github.com/tsunammis">inspir&eacute; par <ah ref="https://www.youtube.com/watch?v=wPPFhcqGcvk">Dan Schafer</a></a></li>
+                  </ul>
+                </section>
+            </div>
+        </div>
+        <script src="js/reveal.js"></script>
+        <script>
+            Reveal.initialize({
+              dependencies: [
+                // Interpret Markdown in <section> elements
+                { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+                // Syntax highlight for <code> elements
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+                // Speaker notes
+                // { src: 'plugin/notes/notes.js', async: true },
+                // { src: 'socket.io/socket.io.js', async: true },
+                // { src: 'plugin/notes-server/client.js', async: true }
+              ]
+            });
+        </script>
+    </body>
+</html>
